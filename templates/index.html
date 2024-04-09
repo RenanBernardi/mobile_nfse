@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function redirectToLogin() {
+            window.location.href = "/login/";
+        }
+    </script>
+</head>
+<img src="{% static 'logo.jpg' %}" alt="logo.jpg">
+<style>
+    
+    body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            
+            background :#005c97;
+                background: -webkit-repeating-radial-gradient(#0190f6, #051931);
+                background: fixed 20% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
+                background-size: cover;
+        }
+</style>
+<body onclick="redirectToLogin()">
+</body>
+</html>
