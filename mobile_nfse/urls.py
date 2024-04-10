@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
     path('', views.index_view, name='index'),  # Redireciona a raiz para a tela de login
     path('login/', views.login_view, name='login'),
-    path('emitir_nfse/', views.emitir_nfse, name='emitir_nfse'),
+    path('emissao_nfse/', views.emissao_nfse, name='emissao_nfse'),
 ]
 

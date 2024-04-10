@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-    function redirectToLogin() {
-        window.location.href = "/emissao_nfse/";
+    <title>Login</title>
+    <script>
+        function redirectToemissao_nfse() {
+            window.location.href = "/emissao_nfse/";
         }
-</script> 
+    </script> 
     <style>
         body {
             display: flex;
@@ -16,10 +17,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background :#005c97;
-                background: -webkit-repeating-radial-gradient(#0190f6, #051931);
-                background: fixed 100% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
-                background-size: cover;
+            background: #005c97;
+            background: -webkit-repeating-radial-gradient(#0190f6, #051931);
+            background: fixed 100% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
+            background-size: cover;
         }
         
         input[type="text"],
@@ -29,10 +30,10 @@
             margin-bottom: 10px;
             border: 1px solid #051931;
             border-radius: 5px;
-            background :#005c97;
-                background: -webkit-repeating-radial-gradient(#0190f6, #051931);
-                background: fixed 50% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
-                background-size: cover;
+            background: #005c97;
+            background: -webkit-repeating-radial-gradient(#0190f6, #051931);
+            background: fixed 50% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
+            background-size: cover;
         }
         button[type="submit"] {
             width: 100%;
@@ -47,17 +48,16 @@
 </head>
 <body>
     <div>
-        
-        <form method="post" onsubmit="redirectToLogin()">
+        <form method="post">
             {% csrf_token %}
             <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required><br>
+            <input type="text" id="username" name="username" required autocomplete="username"><br>
             <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required><br>
+            <input type="password" id="password" name="password" required autocomplete="current-password"><br>
             <button type="submit">Login</button>
         </form>
+        
     </div>
-       
+    
 </body>
 </html>
-
