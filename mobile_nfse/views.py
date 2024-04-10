@@ -8,26 +8,27 @@ def index_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
+        #username = request.POST.get('username')
+        #password = request.POST.get('password')
+        #user = authenticate(request, username=username, password=password)
+        #if user is not None:
+            #login(request, user)
             return redirect('emissao_nfse')  # Redireciona para a tela de emissão
-        else:
-            return render(request, 'login.html', {'error': 'Credenciais inválidas'})
     else:
-        return render(request, 'login.html')  # Retorna a página de login para o método GET
+            return render(request, 'login.html')
+    #else:
+        #return render(request, 'login.html')  # Retorna a página de login para o método GET
 
 
 def emissao_nfse(request):
-    if request.user.is_authenticated:
+    if request.method == 'POST':
         # Aqui você pode colocar a lógica para a emissão de NFSe
-        nfse_gerada = {
-            'numero': 123,
-            'valor': 100.00,
-            'codigo_verificacao': 'ABC123XYZ'
-        }
-        return JsonResponse(nfse_gerada)
+        #nfse_gerada = {
+            #'numero': 123,
+            #'valor': 100.00,
+            #'codigo_verificacao': 'ABC123XYZ'
+        #}
+        #return JsonResponse(nfse_gerada)
+        return redirect('emissao_nfse')
     else:
-        return redirect('emissao_nfse.html')  # Redireciona para a tela de login se o usuário não estiver autenticado
+        return render(request, 'emissao_nfse.html')  # Redireciona para a tela de login se o usuário não estiver autenticado

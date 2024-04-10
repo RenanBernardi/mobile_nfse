@@ -1,7 +1,9 @@
 <!-- login.html -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -10,7 +12,13 @@
             window.location.href = "/emissao_nfse/";
         }
     </script> 
+    <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
     <style>
+        img {
+            width: 250px;
+            margin: flex;
+            display: block;
+        }
         body {
             display: flex;
             justify-content: center;
@@ -44,9 +52,12 @@
             color: #fdfdfd;
             cursor: pointer;
         }
+
+        
     </style>
 </head>
 <body>
+    
     <div>
         <form method="post">
             {% csrf_token %}
