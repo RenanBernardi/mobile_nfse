@@ -15,39 +15,42 @@
     
     <style>
         img {
-            width: 250px;
-            margin: flex;
+            width: 390px;
+            margin: auto;
             display: block;
+            padding: 10px;
+            height: 110px;
+
         }
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            margin: auto;
             background: #005c97;
-            background: -webkit-repeating-radial-gradient(#0190f6, #051931);
+            background: -webkit-repeating-radial-gradient(#0190f6, #ffffff);
             background: fixed 100% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
             background-size: cover;
         }
         
         input[type="text"],
         input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 15px;
             border: 2px solid #051931;
-            border-radius: 10px;
+            border-radius: 5px;
             background: #005c97;
             background: -webkit-repeating-radial-gradient(#0190f6, #051931);
-            background: fixed 50% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
+            background: fixed 60% no-repeat radial-gradient(#0190f6, #0f55a2, #ececec);
             background-size: cover;
         }
         button[type="submit"] {
-            width: 110%;
-            padding: 20px;
+            width: 95%;
+            padding: 9px;
             border: none;
-            border-radius: 20px;
+            border-radius: 15px;
             background-color: #051931;
             color: #fdfdfd;
             cursor: pointer;
@@ -58,14 +61,12 @@
 <body>
         <div class="container">
             <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
-                 img {
-                 width: 240px;
-                 display: block;
-            }
+                 
          
         <div>
             <form method="post">
                 {% csrf_token %}
+                <button type="submit">Alterar endereço servidor:</button>
                 <label for="username">Usuário:</label>  
                 <input type="text" id="username" name="username" required autocomplete="username"><br>
                 <label for="password">Senha:</label>
