@@ -19,15 +19,14 @@
             margin: auto;
             display: block;
             padding: 10px;
-            height: 110px;
+            height: 150px;
 
         }
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: auto;
+            height: 90vh;
             background: #005c97;
             background: -webkit-repeating-radial-gradient(#0190f6, #ffffff);
             background: fixed 100% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
@@ -37,20 +36,20 @@
         input[type="text"],
         input[type="password"] {
             width: 90%;
-            padding: 8px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin: 5px;
             border: 2px solid #051931;
-            border-radius: 5px;
+            border-radius: 8px;
             background: #005c97;
             background: -webkit-repeating-radial-gradient(#0190f6, #051931);
-            background: fixed 60% no-repeat radial-gradient(#0190f6, #0f55a2, #ececec);
+            background: fixed 50% no-repeat radial-gradient(#0190f6, #0f55a2, #ececec);
             background-size: cover;
+            font-size: Arial ;
         }
         button[type="submit"] {
-            width: 95%;
-            padding: 9px;
-            border: none;
-            border-radius: 15px;
+            width: 98%;
+            padding: 15px;   
+            border-radius: 25px;
             background-color: #051931;
             color: #fdfdfd;
             cursor: pointer;
@@ -66,12 +65,12 @@
         <div>
             <form method="post">
                 {% csrf_token %}
-                <button type="submit">Alterar endereço servidor:</button>
-                <label for="username">Usuário:</label>  
-                <input type="text" id="username" name="username" required autocomplete="username"><br>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required autocomplete="current-password"><br>
-                <button type="submit">Login</button>
+                <button type="submit" style="font-size: 18px;">Alterar endereço servidor</button>
+                <label for="username" style="font-size: 20px; color:white">Usuário:</label>
+                <input type="text" style="font-size: 20px;" id="username" name="username" required autocomplete="username"><br>
+                <label for="password" style="font-size:20px; color:white">Senha:</label>
+                <input type="password" style="font-size: 20px;" id="password" name="password" required autocomplete="current-password"><br>
+                <button type="submit" style="font-size: 18px;">Login</button>
             </form>  
         </div>
     </div>  
