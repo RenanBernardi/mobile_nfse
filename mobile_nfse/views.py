@@ -32,3 +32,10 @@ def emissao_nfse(request):
         return redirect('emissao_nfse')
     else:
         return render(request, 'emissao_nfse.html')  # Redireciona para a tela de login se o usuário não estiver autenticado
+
+
+def endereco_servidor(request):
+     if request.method == 'POST':
+          return redirect('endereco_servidor')
+     else:
+          return render(request, 'endereco_servidor.html')

@@ -8,10 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script>
+        
         function redirectToemissao_nfse() {
             window.location.href = "/emissao_nfse/";
         }
+        
     </script> 
+    <script>
+        function redirectToendereco_servidor(){
+            window.location.href = "/endereco_servidor/";
+        }
+    </script>
     
     <style>
         img {
@@ -46,6 +53,8 @@
             background-size: cover;
             font-size: Arial ;
         }
+        
+            
         button[type="submit"] {
             width: 98%;
             padding: 15px;   
@@ -54,6 +63,7 @@
             color: #fdfdfd;
             cursor: pointer;
         }
+        
  
     </style>
 </head>
@@ -63,9 +73,11 @@
                  
          
         <div>
+                <button type="submit" onclick="redirectToendereco_servidor()" style="font-size: 18px;">Alterar endereço servidor</button>
+            
+
             <form method="post">
                 {% csrf_token %}
-                <button type="submit" style="font-size: 18px;">Alterar endereço servidor</button>
                 <label for="username" style="font-size: 20px; color:white">Usuário:</label>
                 <input type="text" style="font-size: 20px;" id="username" name="username" required autocomplete="username"><br>
                 <label for="password" style="font-size:20px; color:white">Senha:</label>

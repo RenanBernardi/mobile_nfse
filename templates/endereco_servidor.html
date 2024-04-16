@@ -1,10 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Endereço Servidor</title>
     <style>
+        img {
+            width: 350px;
+            display: center;
+            padding: 30px;
+            height: 150px;
+        }
         body {
             font-family: Arial, sans-serif;
             background: #005c97;
@@ -21,8 +29,8 @@
         .container h2 {
             color: #f7f8fa;
             text-align: auto;
-            width: 105%;
-            padding-left: 10%;
+            width: 80%;
+            padding-left: 18%;
             
             
         }
@@ -57,11 +65,13 @@
 </head>
 <body>
     <div class="container">
-        <h2>Alterar Endereço do Servidor</h2>
+        <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
+        <h2>Endereço do Servidor</h2>
+        
         <form>
-            <label for="ip">Endereço Servidor:</label>
-            <input type="text" id="ip" name="ip" placeholder="Digite endereço IP/Nome do servidor" required>
-            <button type="submit" onclick="redirectToemissao_nfse()">Salvar Alterações</button>
+            
+            <input type="text" style="font-size: 18px" id="ip" name="ip" placeholder="Digite endereço IP/Nome do servidor" required>
+            <button type="submit" style="font-size: 18px" onclick="redirectToemissao_nfse()">Salvar Alterações</button>
         </form>
     </div>
 
