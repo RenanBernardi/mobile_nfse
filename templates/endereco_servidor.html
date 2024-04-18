@@ -51,7 +51,6 @@
             width: 100%;
             padding: 15px;
             padding-top: 25px;
-            border: none;
             border-radius: 18px;
             background-color: #051931;
             color: #fdfdfd;
@@ -64,18 +63,26 @@
     </style>
 </head>
 <body>
+    
     <div class="container">
         <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
         <h2>Endereço do Servidor</h2>
         
         <form>
-            
             <input type="text" style="font-size: 18px" id="ip" name="ip" placeholder="Digite endereço IP/Nome do servidor" required>
-            <button type="submit" style="font-size: 18px" onclick="redirectToemissao_nfse()">Salvar Alterações</button>
+            <button type="submit" style="font-size: 17px" onclick="SalvarAlterações()">Salvar Alterações</button>
+            <button type="submit" style="font-size: 16px" onclick="Sincronizar()">Sincronizar</button>
+            <button type="submit" style="font-size: 15px" onclick="redirectToemissao_nfse()">Concluir</button>
         </form>
     </div>
 
     <script>
+        function SalvarAlterações(){
+            alert("Alterações salvadas com sucesso!")
+        }
+        function Sincronizar(){
+            alert("Sincronização concluída com sucesso!")
+        }
         function redirectToemissao_nfse() {
             // Aqui você pode adicionar a lógica para salvar as alterações do endereço do servidor
             // Após salvar, redirecione para a tela de login
