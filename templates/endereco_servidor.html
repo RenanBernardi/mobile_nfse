@@ -7,12 +7,13 @@
     
     <title>Endereço Servidor</title>
     <style>
+       
         img {
-            width: 350px;
-            display: center;
-            padding: 30px;
-            height: 150px;
+            max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner pai */
+            height: auto; /* Mantém a proporção da imagem */
+            padding: 10px;
         }
+
         body {
             font-family: Arial, sans-serif;
             background: #005c97;
@@ -20,59 +21,77 @@
             background: fixed 50% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
             background-size: cover;
             display: flex;
-            justify-content: flex;
+            justify-content: center; /* Centraliza horizontalmente */
             align-items: center;
             height: 95vh;
-           
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%; /* Define a largura máxima da área de conteúdo */
+            text-align: center; /* Centraliza o conteúdo */
+            color: #f7f8fa;
         }
 
         .container h2 {
-            color: #f7f8fa;
-            text-align: auto;
-            width: 80%;
-            padding-left: 18%;
-            
-            
+            text-align: center;
+            padding-top: 20px; /* Adiciona espaço acima do título */
+            padding-bottom: 20px; /* Adiciona espaço abaixo do título */
         }
 
         input[type="text"] {
-            width: 91%;
-            font-size: 12px;
-            padding: 18px;
-            padding-bottom: 10%;
-            margin-bottom: 10px;
-            border: 0px solid #051931;
+            width: 100%; /* Ocupa toda a largura do contêiner */
+            max-width: 400px; /* Define uma largura máxima para evitar que o campo fique muito largo em telas grandes */
+            font-size: 18px;
+            padding: 15px;
+            margin-bottom: 20px; /* Adiciona espaço entre os campos */
+            border: none; /* Remove a borda */
             border-radius: 10px;
             background: #005c97;
             color: #f1f5fa;
+            box-sizing: border-box; /* Garante que o padding não aumente o tamanho total do campo */
         }
 
         button[type="submit"] {
-            width: 100%;
+            width: 100%; /* Ocupa toda a largura do contêiner */
+            max-width: 400px; /* Define uma largura máxima para evitar que o botão fique muito largo em telas grandes */
             padding: 15px;
-            padding-top: 25px;
+            border: none;
             border-radius: 18px;
             background-color: #051931;
             color: #fdfdfd;
             cursor: pointer;
+            box-sizing: border-box; /* Garante que o padding não aumente o tamanho total do botão */
+            margin-bottom: 10px; /* Adiciona espaço entre os botões */
         }
 
         button[type="submit"]:hover {
             background-color: #0f55a2;
         }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 90%; /* Reduz a largura máxima da área de conteúdo em telas menores */
+            }
+
+            input[type="text"],
+            button[type="submit"] {
+                max-width: 100%; /* Remove a largura máxima para que os elementos ocupem toda a largura do contêiner */
+            }
+        }
     </style>
 </head>
 <body>
-    
     <div class="container">
         <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
         <h2>Endereço do Servidor</h2>
         
         <form>
-            <input type="text" style="font-size: 18px" id="ip" name="ip" placeholder="Digite endereço IP/Nome do servidor" required>
-            <button type="submit" style="font-size: 17px" onclick="SalvarAlterações()">Salvar Alterações</button>
-            <button type="submit" style="font-size: 16px" onclick="Sincronizar()">Sincronizar</button>
-            <button type="submit" style="font-size: 15px" onclick="redirectToemissao_nfse()">Concluir</button>
+            <input type="text" id="ip" name="ip" placeholder="Digite endereço IP/Nome do servidor">
+            <button type="submit" onclick="SalvarAlterações()">Salvar Alterações</button>
+            <button type="submit" onclick="Sincronizar()">Sincronizar</button>
+            <button type="submit" onclick="redirectToemissao_nfse()">Concluir</button>
         </form>
     </div>
 
