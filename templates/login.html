@@ -22,8 +22,9 @@
     </script>
     <style>
         img {
-            max-width: 100%;
+            max-width: 85%;
             height: center;
+            padding: 10px;
         }
 
         body {
@@ -83,7 +84,7 @@
     <div class="container">
         <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
         <div>
-            <button type="submit" onclick="redirectToendereco_servidor()">Alterar endereço servidor</button><br>
+            <button type="submit" onclick="redirectToendereco_servidor()">Alterar endereço servidor</button><br><br>
             <form method="post">
                 <div style="margin-right: 10%;">
                     {% csrf_token %}
@@ -92,7 +93,7 @@
                         autocomplete="username"><br>
                     <label for="password" style="padding-left: 2%;">Senha</label>
                     <input type="password" style="padding-left: 12%;" id="password" name="password" required
-                        autocomplete="current-password"><br>
+                        autocomplete="current-password"><br><br>
                 </div>
                 <button type="submit">Login</button><br><br>
             </form>

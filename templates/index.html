@@ -6,33 +6,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <script>
         function redirectToLogin() {
             window.location.href = "/login/";
         }
     </script>
 </head>
-<img src="{% static 'logo.jpg' %}" alt="logo.jpg">
+
 <style>
-     img {
-            width: 290px;
-            display: block;
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
         }
 
-    body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            
-            
-            background :#005c97;
-                background: -webkit-repeating-radial-gradient(#0190f6, #051931);
-                background: fixed 20% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
-                background-size: cover;
+        50% {
+            transform: scale(1.1);
         }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .pulsating-img {
+        animation: pulse 2s infinite;
+    }
+
+    img {
+        width: 290px;
+        display: block;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+
+        background: #005c97;
+        background: -webkit-repeating-radial-gradient(#0190f6, #051931);
+        background: fixed 20% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
+        background-size: cover;
+    }
 </style>
+
 <body onclick="redirectToLogin()">
+    <div>
+        <img class="pulsating-img" src="{% static 'logo.jpg'%}" alt="logo.jpg">
+    </div>
 </body>
+
 </html>
