@@ -2,35 +2,35 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script>
-        
+
         function redirectToemissao_nfse() {
             window.location.href = "/emissao_nfse/";
         }
-        
-    </script> 
+
+    </script>
     <script>
-        function redirectToendereco_servidor(){
+        function redirectToendereco_servidor() {
             window.location.href = "/endereco_servidor/";
         }
     </script>
     <style>
         img {
             max-width: 100%;
-            height: auto;
-            padding: 10px;
+            height: center;
         }
 
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 98vh;
             background: #005c97;
             background: -webkit-repeating-radial-gradient(#0190f6, #ffffff);
             background: fixed 100% no-repeat radial-gradient(#0190f6, #0f55a2, #051931);
@@ -45,59 +45,59 @@
 
         input[type="text"],
         input[type="password"] {
-            width: 65%;
-            max-width: 100%;
-            padding: 15px;
-            margin: 2px;
-            border: 2px solid #051931;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid #051931;
             border-radius: 8px;
             background: #005c97;
-            box-sizing: border-box;
             color: white;
-            text-align: center;
         }
 
         button[type="submit"] {
-            width: 48%;
-            max-width: 100%;
-            padding: 18px;
-            border-radius: 25px;
+            width: 200px;
+            padding: 12px;
+            border-radius: 20px;
             background-color: #051931;
             color: #fdfdfd;
             cursor: pointer;
             box-sizing: border-box;
-            margin-top: 15px; /* Adiciona espaço entre o botão e os campos de entrada */
-            
+
         }
 
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 1800px) {
             .container {
                 max-width: 100%;
             }
+
             input[type="text"],
             input[type="password"],
-            button[type="submit"] {
+            input[type="button"] {
                 max-width: 100%;
             }
+
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
         <div>
-            <button type="submit" onclick="redirectToendereco_servidor()" style=>Alterar endereço servidor</button>
+            <button type="submit" onclick="redirectToendereco_servidor()">Alterar endereço servidor</button><br>
+            <form method="post">
+                <div style="margin-right: 10%;">
+                    {% csrf_token %}
+                    <label for="username">Usuário</label>
+                    <input type="text" style="padding-left: 12%" id="username" name="username" required
+                        autocomplete="username"><br>
+                    <label for="password" style="padding-left: 2%;">Senha</label>
+                    <input type="password" style="padding-left: 12%;" id="password" name="password" required
+                        autocomplete="current-password"><br>
+                </div>
+                <button type="submit">Login</button><br><br>
+            </form>
         </div>
-
-        <form method="post">
-            {% csrf_token %}
-            <label for="username" style="padding: 10px">Usuário:</label>
-            <input type="text" id="username" name="username" required autocomplete="username"><br>
-            <label for="password"style="padding: 15px">Senha:</label>
-            <input type="password" id="password" name="password" required autocomplete="current-password"><br>
-            <button type="submit">Login</button>
-        </form> 
-        </div>
-    </div>  
+    </div>
 </body>
+
 </html>
