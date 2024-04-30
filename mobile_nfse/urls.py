@@ -12,4 +12,3 @@ urlpatterns = [
     path('emissao_nfse/', emissao_nfse, name='emissao_nfse'),
     path('endereco_servidor/', endereco_servidor, name='endereco_servidor'),
 ]
-
