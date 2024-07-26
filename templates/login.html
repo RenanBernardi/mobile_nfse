@@ -24,7 +24,7 @@
     </script>
     <style>
         img {
-            max-width: 85%;
+            max-width: 65%;
             height: center;
             padding: 10px;
         }
@@ -52,19 +52,22 @@
             margin: 3px;
             border: 1px solid #051931;
             border-radius: 8px;
-            background: #005c97;
-            color: white;
+            background: #eaf1f8;
+            color: rgb(7, 7, 7);
         }
 
         button[type="submit"] {
             width: 200px;
             padding: 12px;
             border-radius: 20px;
-            background-color: #051931;
-            color: #fdfdfd;
+            color: #ffffff;
             cursor: pointer;
             box-sizing: border-box;
+            background-color: #0c6cb1fa;
 
+        }
+        button[type="submit"]:hover {
+            background-color: #0f55a2;
         }
 
         @media screen and (max-width: 1800px) {
@@ -84,7 +87,7 @@
 
 <body>
     <div class="container">
-        <img src="{% static 'logo.jpg' %}" alt="logo.jpg">
+        <img class= "pulsating-img" src="{% static 'logo.jpg' %}" alt="logo.jpg">
         <div>
             <button type="submit" onclick="redirectToendereco_servidor()">Alterar endereço servidor</button><br><br>
             <form method="post">
